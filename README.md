@@ -30,13 +30,23 @@ SOAP Servisi SMS Gönderme
     Yüklü miktardaki SMS'lerinizi tek tek (her pakette bir numara) göndermeniz durumunda SMS'leriniz sistem tarafından biriktirilerek 1 dakika içerisinde iletilir. SMS'lerinizi bize çoklu paketler halinde göndermeniz bu durumun önüne
     
 username: 	Sisteme giriş yaparken kullanılan kullanıcı adıdır. Bu alana abone numarası da yazılabilir (8xxxxxxxxx). İstek yapılırken gönderilmesi zorunludur. 	1:N
+
 password: 	Sisteme giriş yaparken kullanılan şifredir. İstek yapılırken gönderilmesi zorunludur. 	1:N
+
 header: 	Sistemde tanımlı olan mesaj başlığınızdır (gönderici adınız). En az 3, en fazla 11 karakterden oluşur. 	1:N
+
 msg: 	SMS metninin yer alacağı alandır. 	1:N
+
 msg[ ]: 	SMS metninin yer alacağı alandır.Nn sms gönderimlerinde array olarak gönderilmelidir. 	N:N
+
 gsm[ ]: 	SMS in gideceği numaraları temsil eder array gönderilmeli 	1:N, N:N
+
 encoding: 	Türkçe karakter desteği isteniyorsa bu alana TR girilmeli, istenmiyorsa null olarak gönderilmelidir. SMS boyu hesabı ve ücretlendirme bu parametreye bağlı olarak değişecektir. 	1:N
+
 startdate: 	Gönderime başlayacağınız tarih. (ddMMyyyyHHmm) * Boş bırakılırsa mesajınız hemen gider. 	1:N
+
 stopdate: 	İki tarih arası gönderimlerinizde bitiş tarihi.(ddMMyyyyHHmm)* Boş bırakılırsa sistem başlangıç tarihine 21 saat ekleyerek otomatik gönderir. 	1:N
+
 bayikodu: 	Bayi üyesi iseniz bayinize ait kod 	1:N
+
 filter: 	Ticari içerikli SMS gönderimlerinde bu parametreyi kullanabilirsiniz. Ticari içerikli bireysele gönderilecek numaralar için İYS kontrollü gönderimlerde ise "11" değerini, tacire gönderilecek İYS kontrollü gönderimlerde ise "12" değerini almalıdır. null gönderildiği taktirde filtre uygulanmadan gönderilecektir.İstek yapılırken gönderilmesi zorunludur. Ticari içerikli ileti gönderimi yapmıyorsanız 0 gönderilmelidir. 	1:N
