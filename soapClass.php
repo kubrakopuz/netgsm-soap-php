@@ -17,8 +17,6 @@ class soapClass
     }
 
 
-
-
     function sendmsg($var) // $var=1 1:n format, $var=2 n:n format
     {
         self::setStatus("success");
@@ -26,7 +24,7 @@ class soapClass
 
             self::genelcheck();
             $client = new SoapClient($this->soapurl);
-          $func=($var=="2")?"smsGonderNNV2":"smsGonder1NV2";
+            $func = ($var == "2") ? "smsGonderNNV2" : "smsGonder1NV2";
             $Result = $client->{$func}(array(
                 'username' => $this->usernm,
                 'password' => $this->pwd,
@@ -57,10 +55,10 @@ class soapClass
         if ($this->message == "") throw new Exception("header is not valid,header is missing ");
         if (!is_array($this->gsm)) throw new Exception("gsm is not valid,gsm is missing ");
 
-       /*  if (!isset($this->filter)) throw new Exception("filter is not valid,filter is missing ");
-        if ($this->startdate == "") throw new Exception("startdate is not valid,startdate is missing ");
-        if ($this->stopdate == "") throw new Exception("stopdate is not valid,stopdate is missing ");
-        if ($this->encoding == "") throw new Exception("encoding is not valid,encoding is missing "); */
+        /*  if (!isset($this->filter)) throw new Exception("filter is not valid,filter is missing ");
+         if ($this->startdate == "") throw new Exception("startdate is not valid,startdate is missing ");
+         if ($this->stopdate == "") throw new Exception("stopdate is not valid,stopdate is missing ");
+         if ($this->encoding == "") throw new Exception("encoding is not valid,encoding is missing "); */
     }
 
     /**
